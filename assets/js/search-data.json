@@ -1,11 +1,33 @@
 {
   
+    
+        "post0": {
+            "title": "Homework/Hacks for Sections 17-18",
+            "content": "",
+            "url": "https://vardaansinha.github.io/fastpagesp4/markdown/2022/12/11/sectionhacks.html",
+            "relUrl": "/markdown/2022/12/11/sectionhacks.html",
+            "date": " • Dec 11, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
+            "title": "3.18 Undecidable Problems",
+            "content": "",
+            "url": "https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.18.html",
+            "relUrl": "/jupyter/2022/12/11/3.18.html",
+            "date": " • Dec 11, 2022"
+        }
+        
+    
+  
 
   
   
 
   
-      "page1": {
+      ,"page1": {
           "title": "About Me",
           "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://vardaansinha.github.io/fastpagesp4/about/",
