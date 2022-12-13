@@ -7,7 +7,7 @@
 <title>3.18 Undecidable Problems | Sections 17-18 FastPages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="3.18 Undecidable Problems" />
-<meta name="author" content="Justin Nguyen" />
+<meta name="author" content="Justin Nguyen and zeem" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="3.18" />
 <meta property="og:description" content="3.18" />
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="3.18 Undecidable Problems" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Justin Nguyen"},"dateModified":"2022-12-11T00:00:00-06:00","datePublished":"2022-12-11T00:00:00-06:00","description":"3.18","headline":"3.18 Undecidable Problems","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.18.html"},"url":"https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.18.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Justin Nguyen and zeem"},"dateModified":"2022-12-11T00:00:00-06:00","datePublished":"2022-12-11T00:00:00-06:00","description":"3.18","headline":"3.18 Undecidable Problems","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.18.html"},"url":"https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.18.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpagesp4/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/fastpagesp4/feed.xml" title="Sections 17-18 FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagesp4/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -78,11 +78,11 @@ window.onload = wrap_img;
         Dec 11, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Justin Nguyen</span></span>
+            <span class="p-author h-card" itemprop="name">Justin Nguyen and zeem</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -128,12 +128,13 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#learning-objective">learning objective </a></li>
-<li class="toc-entry toc-h1"><a href="#essential-knowledge">essential knowledge </a></li>
+<li class="toc-entry toc-h1"><a href="#Essential-knowledge">Essential knowledge </a></li>
 <li class="toc-entry toc-h1"><a href="#IMPORTANT!!!!">IMPORTANT!!!! </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Undecidable-problem-example">Undecidable problem example </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h1"><a href="#Theoretical-example-(by-zeem)">Theoretical example (by zeem) </a></li>
 <li class="toc-entry toc-h1"><a href="#essential-vocabulary">essential vocabulary </a></li>
 <li class="toc-entry toc-h1"><a href="#practice-problems">practice problems </a></li>
 </ul><!--
@@ -153,11 +154,11 @@ window.onload = wrap_img;
 </h1>
 <p>Explain the existence of undecidable problems in computer science. Basically What are undecidable problems in comp sci?</p>
 <p><strong>Main idea: There exist problems that computers cannot solve, and even when a computer can solve a problem, it may not be able to do so in a reasonable amount of time.</strong></p>
-<h1 id="essential-knowledge">
-<a class="anchor" href="#essential-knowledge" aria-hidden="true"><span class="octicon octicon-link"></span></a>essential knowledge<a class="anchor-link" href="#essential-knowledge"> </a>
+<h1 id="Essential-knowledge">
+<a class="anchor" href="#Essential-knowledge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Essential knowledge<a class="anchor-link" href="#Essential-knowledge"> </a>
 </h1>
 <p>What is a decidable problem?</p>
-<p>these are problems for which algorthms could be written to solve/produce a correct output for all inputs.</p>
+<p>These are problems for which algorthms could be written to solve/produce a correct output for all inputs.</p>
 
 </div>
 </div>
@@ -175,6 +176,8 @@ window.onload = wrap_img;
     <span class="nb">print</span><span class="p">(</span><span class="s2">"is even"</span><span class="p">)</span> <span class="c1"># if remainder is 0, num is even</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"is not even"</span><span class="p">)</span> <span class="c1"># if there is any remainder e.g its odd num: num is odd</span>
+
+<span class="c1"># all inputs will provide a yes or no answer</span>
 </pre></div>
 
     </div>
@@ -202,11 +205,13 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What is an undecidable problem?</p>
-<p>these are problems for which no algorithms can be built that can provide a correct yes or no answer. sometimes there are algorithmic solutions for undecidable problems that can be used for a certain instance, but there won't be one algorithmic solution for all inputs of the undecidable problem.</p>
+<p>These are problems for which no algorithms can be built that can provide a correct yes or no answer.</p>
+<p>Also...</p>
+<p>Undecidable problems may have some instances of algorithmic solutions, but there are no algorithmic solutions that can solve all instances of the problem (zeem)</p>
 <h1 id="IMPORTANT!!!!">
 <a class="anchor" href="#IMPORTANT!!!!" aria-hidden="true"><span class="octicon octicon-link"></span></a>IMPORTANT!!!!<a class="anchor-link" href="#IMPORTANT!!!!"> </a>
 </h1>
-<p><strong>don't worry about determining if a given problem is undecidable or not. deciding if problems are undecideable or not is outside the scope of APCSP. worry about that later in advanced CS courses</strong></p>
+<p><strong>Don't worry about determining if a given problem is undecidable or not. deciding if problems are undecideable or not is outside the scope of APCSP. Worry about that later in advanced CS courses</strong></p>
 <h3 id="Undecidable-problem-example">
 <a class="anchor" href="#Undecidable-problem-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Undecidable problem example<a class="anchor-link" href="#Undecidable-problem-example"> </a>
 </h3>
@@ -228,8 +233,31 @@ window.onload = wrap_img;
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
 <span class="n">fumo</span><span class="p">()</span>
+</pre></div>
 
-<span class="c1"># this is an undecidable problem because the function fumo never stops and thus there is no algorithm we could make to determine whether or not fumo has stopped</span>
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># given a computer program and an input... </span>
+<span class="c1"># will the program terminate or will it run forever?</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># this reads the input, </span>
+<span class="c1"># and if it's not empty, the procedure loops forever.</span>
 </pre></div>
 
     </div>
@@ -242,6 +270,19 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The Halting problem is probably the best known problem that has proven to be undecidable. that is, no program can solve the Halting problem for sufficiently general computer programs.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Theoretical-example-(by-zeem)">
+<a class="anchor" href="#Theoretical-example-(by-zeem)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Theoretical example (by zeem)<a class="anchor-link" href="#Theoretical-example-(by-zeem)"> </a>
+</h1>
+<p>Barber Paradox: There was a barber in a small town on Crick Island, and one day he made a rule that he would only cut the hair of people who did not cut their own hair. The barber's rule seemed to make sense, since people cut their own hair, so I do not have to "do more than that", I will give this person a haircut. Initially, there was nothing wrong with this rule, but later, as the barber's own hair grew longer and longer, he found himself in a dilemma: should he give himself a haircut?</p>
+<p>Answer: If he cuts his own hair, then he becomes the "person who cuts his own hair" in his regulations, then he should not cut his own hair; if he does not cut his own hair, then he is not the one in his regulations A person who cuts his own hair", then he should cut his own hair. Combining the above two situations, "he cuts his own hair" if and only if "he does not cut his own hair", which becomes a paradox.</p>
 <h1 id="essential-vocabulary">
 <a class="anchor" href="#essential-vocabulary" aria-hidden="true"><span class="octicon octicon-link"></span></a>essential vocabulary<a class="anchor-link" href="#essential-vocabulary"> </a>
 </h1>
@@ -318,6 +359,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Question 4: God is omnipotent, so can God create a stone that he cannot lift? Why or why not? (zeem)</p>
 <p>ANSWERS: true, false, decidable, decidable</p>
 
 </div>
