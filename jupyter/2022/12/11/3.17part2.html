@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>3.17 Algorithmic Efficiency: Part 2 | Sections 17-18 FastPages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="3.17 Algorithmic Efficiency: Part 2" />
+<meta name="author" content="Vardaan Sinha" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="3.17 Part 2" />
+<meta property="og:description" content="3.17 Part 2" />
+<link rel="canonical" href="https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.17part2.html" />
+<meta property="og:url" content="https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.17part2.html" />
+<meta property="og:site_name" content="Sections 17-18 FastPages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-11T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="3.17 Algorithmic Efficiency: Part 2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vardaan Sinha"},"dateModified":"2022-12-11T00:00:00-06:00","datePublished":"2022-12-11T00:00:00-06:00","description":"3.17 Part 2","headline":"3.17 Algorithmic Efficiency: Part 2","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.17part2.html"},"url":"https://vardaansinha.github.io/fastpagesp4/jupyter/2022/12/11/3.17part2.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagesp4/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/fastpagesp4/feed.xml" title="Sections 17-18 FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagesp4/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagesp4/">Sections 17-18 FastPages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagesp4/about/">About Me</a><a class="page-link" href="/fastpagesp4/search/">Search</a><a class="page-link" href="/fastpagesp4/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">3.17 Algorithmic Efficiency: Part 2</h1><p class="page-description">3.17 Part 2</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-11T00:00:00-06:00" itemprop="datePublished">
+        Dec 11, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Vardaan Sinha</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpagesp4/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/vardaansinha/fastpagesp4/tree/master/_notebooks/2022-12-11-3.17part2.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpagesp4/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/vardaansinha/fastpagesp4/master?filepath=_notebooks%2F2022-12-11-3.17part2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagesp4/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/vardaansinha/fastpagesp4/blob/master/_notebooks/2022-12-11-3.17part2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpagesp4/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fvardaansinha%2Ffastpagesp4%2Fblob%2Fmaster%2F_notebooks%2F2022-12-11-3.17part2.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpagesp4/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Learning-objective">Learning objective </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-12-11-3.17part2.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Learning-objective">
+<a class="anchor" href="#Learning-objective" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning objective<a class="anchor-link" href="#Learning-objective"> </a>
+</h1>
+<p>AAP-4.A.5</p>
+<p><strong>An algorithm’s efficiency can be informally measured by determining the number of times a statement or group of statements executes.</strong></p>
+<p>AAP-4.A.6</p>
+<p><strong>Different correct algorithms for the same problem can have different efficiencies.</strong></p>
+<p>AAP-4.A.7</p>
+<p><strong>Algorithms with a polynomial efficiency or slower (constant, linear, square, cube, etc.) are said to run in a reasonable amount of time. Algorithms with exponential or factorial efficiencies are examples of algorithms that run in an unreasonable amount of time.</strong></p>
+<p>AAP-4.A.8</p>
+<p><strong>Some problems cannot be solved in a reasonable amount of time because there is no efficient algorithm for solving them. In these cases, approximate solutions are sought.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<p>To review, an <em>algorithm</em> is a process or set of rules to be followed in calculations or other problem-solving operations.</p>
+<p>Algorithms can be divided up into four types:</p>
+<ul>
+<li>1 step
+<br>
+</li>
+<li>2 step
+<br>
+</li>
+<li>3 step
+<br>
+</li>
+<li>4 step</li>
+</ul>
+<p>The first step consists of an integer being multiplied by a variable 'n'. An example of this could be 5 * n.</p>
+<p>Practice Problem 1:</p>
+<p>Q: Which of the following algorithms is a step 1 algorithm?</p>
+<p>A. 3^4
+<br>
+B. (2 <em> 4)^2
+<br>
+C. 2 </em> 4
+<br>
+D. 6^4</p>
+<details closed="">
+<summary>Answer</summary>
+[The answer would be option C. Here, the integer is 2, and it is being multiplied by a value 'n', which is 4.]
+</details><p><br>
+<br></p>
+<p>A two-step algorithm consists of an integer to the power of the variable 'n'.</p>
+<p>Practice Problem 2:</p>
+<p>Q: Which of the following algorithms is a two-step algorithm?</p>
+<p>A. 3^4 
+B. (2 <em> 4)^2
+C. 2 </em> 4
+D. 6 + 4</p>
+<details closed="">
+<summary>Answer</summary>
+[The answer would be option A. Here, the integer is 3, and it is being raised to the power of 4.]
+</details><p><br>
+<br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A three-step algorithm is an algorithm where there is a variable multiplied by an integer, all to the power of 2.</p>
+<p>An example of this would be (2 * n)^2.</p>
+<p><br></p>
+<p>Finally, a four-step algorithm is a variable factorial. For instance, 5! = 5 <em> 4 </em> 3 <em> 2 </em> 1 = 120.</p>
+<p><br></p>
+<p>1 step: Linear
+<br>
+2 steps: Exponential
+<br>
+3 steps: Square
+<br>
+4 steps: Factorial</p>
+<p><br></p>
+<p>When an algorithm is linear or square, it runs in a reasonable amount of time. However, if the algorithm is exponential or factorial, they are considered to be run in an unreasonable amount of time. A "reasonable amount of time" is when the algorithm increases by smaller values instead of jumping from a lower value to a much higher value.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Categorizing run times</p>
+<p>We can categorize the run time of an algorithm according to how the number of steps increases as the input size increases. Does it always take the same amount of time? That's a constant increase, a very fast run time. Does it always require looking at every possible permutation of the input? That's an exponential increase, a very slow run time. Most run times are somewhere between.</p>
+<p><strong>Constant time</strong></p>
+<p>When an algorithm runs in constant time, it means that it always takes a fixed number of steps, no matter how large the input size increases.</p>
+<p>As an example, consider accessing the first element of a list:</p>
+
+<pre><code>firstPost ← posts[1]</code></pre>
+<p>Even if the list grows to be a million items long, that operation will always require a single step.</p>
+<p>Now imagine this code's result as a table? A graph? What would it look like? (In terms of List size vs Steps)</p>
+<p><a href="https://www.desmos.com/calculator/klv9eeujxr">Answer</a></p>
+<p><strong>Reasonable Time</strong></p>
+<p>Algorithms with a polynomial efficiency or lower (constant, linear, square, cube, etc.)</p>
+<p>Ex:</p>
+<ul>
+<li>n^2</li>
+<li>2n</li>
+<li>n</li>
+<li>n^10</li>
+<li>n^20</li>
+<li>log(n)</li>
+</ul>
+<p>What would a graph with Reasonable Time Look Like? (In terms of List Size vs Steps)</p>
+<p><a href="">Answer</a></p>
+<p><strong>Unreasonable Time</strong></p>
+<p>Algorithms with exponential or factorial efficiencies</p>
+<p>Ex:</p>
+<ul>
+<li>2^n</li>
+<li>10^n</li>
+<li>5^n</li>
+</ul>
+<p>What would a graph with Reasonable Time Look Like? (In terms of List Size vs Steps)</p>
+<p><a href="">Answer</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="vardaansinha/fastpagesp4"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpagesp4/jupyter/2022/12/11/3.17part2.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagesp4/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpagesp4/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagesp4/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
